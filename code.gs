@@ -5,6 +5,7 @@ function doPost(e){
   console.log(params)
   
   var today = Utilities.formatDate(new Date(), "JST", "yyyy/MM/dd");
+  if (!params.Out && !params.Go) return;
   if (params.Out == "") {
     sheet.appendRow([params.ID, params.Name, today, params.Go, ""]);
   }
